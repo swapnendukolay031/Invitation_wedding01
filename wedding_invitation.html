@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Didhiti & Shuvankar | Wedding Invitation</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background: linear-gradient(145deg, #FCAD38, #972828, #f5c9b9);
+        color: #542321;
+        overflow-x: hidden;
+    }
+
+    .script-font {
+        font-family: 'Great Vibes', cursive;
+    }
+
+    .serif-font {
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .invitation-card {
+        max-width: 850px;
+        width: 100%;
+        margin: auto;
+        padding: 55px 25px;
+        background: rgba(255, 250, 247, 0.84);
+        border-radius: 28px;
+        box-shadow: 0 15px 50px rgba(100, 48, 45, 0.12);
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .fade-in {
+        animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .heart {
+        position: fixed;
+        bottom: -30px;
+        color: #e7adb5;
+        opacity: 0.45;
+        pointer-events: none;
+        animation: floatHeart 9s linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes floatHeart {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.45;
+        }
+        100% {
+            transform: translateY(-110vh) rotate(35deg);
+            opacity: 0;
+        }
+    }
+
+    .music-button {
+        background: #aa5e7a;
+        color: white;
+        padding: 13px 27px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 13px;
+        letter-spacing: 1px;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(170, 94, 122, 0.2);
+    }
+
+    .music-button:hover {
+        background: #87445d;
+        transform: translateY(-3px);
+    }
+
+    .portrait {
+    max-width: 60%;
+    width: 320px;
+    height: auto;
+    border-radius: 15px;
+    opacity: 0.85;
+    box-shadow: 0 12px 30px rgba(80, 40, 40, 0.13);
+}
+
+    .section-line {
+        height: 1px;
+        width: 100px;
+        background: #c58c83;
+        margin: 20px auto;
+    }
+
+    @media(max-width: 600px) {
+        .invitation-card {
+            padding: 40px 18px;
+        }
+
+        .couple-names {
+            font-size: 75px !important;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<div id="hearts"></div>
+
+<main class="min-h-screen flex items-center justify-center px-4 py-12">
+
+<div class="invitation-card fade-in">
+
+    <!-- Introduction -->
+    <p class="uppercase tracking-[0.3em] text-xs md:text-sm text-[#AA5E7A] font-semibold mb-8">
+        Together with their families
+    </p>
+
+    <!-- Couple Portrait -->
+    <div class="flex justify-center mb-10">
+        <img
+            src="./PHOTOS/Watercolor Romance in Bloom.png"
+            alt="Didhiti and Shuvankar"
+            class="portrait"
+            height=100px
+        >
+    </div>
+
+    <!-- Main Heading -->
+    <p class="serif-font text-xl md:text-2xl tracking-[0.25em] uppercase">
+        Save The Date
+    </p>
+
+    <p class="serif-font text-3xl md:text-4xl font-bold tracking-widest uppercase mt-3 text-[#702D35]">
+        For The Wedding
+    </p>
+
+    <div class="section-line"></div>
+
+    <!-- Couple Names -->
+    <p class="script-font text-3xl md:text-4xl text-[#A16B36]">
+        Mr <span class="text-[#AA5E7A]">♡</span> Mrs
+    </p>
+
+    <h1 class="script-font couple-names text-7xl md:text-8xl lg:text-9xl text-[#702D35] mt-5">
+        Didhiti
+    </h1>
+
+    <p class="script-font text-5xl text-[#AA5E7A] my-1">
+        &
+    </p>
+
+    <h1 class="script-font couple-names text-7xl md:text-8xl lg:text-9xl text-[#702D35]">
+        Shuvankar
+    </h1>
+
+    <div class="section-line"></div>
+
+    <!-- Invitation Message -->
+    <p class="serif-font text-2xl md:text-3xl leading-relaxed text-[#79504B] max-w-xl mx-auto">
+        Joyfully invite you to celebrate their marriage and the beginning of their beautiful journey together.
+    </p>
+
+    <!-- Wedding Details -->
+    <div class="mt-12 mb-10">
+
+        <p class="uppercase tracking-[0.3em] text-xs text-[#AA5E7A] mb-4">
+            Wedding Celebration
+        </p>
+
+        <h2 class="serif-font text-4xl md:text-5xl font-semibold text-[#702D35]">
+            11th February 2027
+        </h2>
+
+        <div class="section-line"></div>
+
+        <p class="serif-font text-3xl md:text-4xl">
+            Shagun Banquet Hall
+        </p>
+
+        <p class="text-sm text-gray-500 mt-3">
+            Time to be announced
+        </p>
+
+    </div>
+
+    <!-- Location QR Code -->
+    <div class="mt-12 flex flex-col items-center">
+
+        <p class="uppercase tracking-[0.2em] text-xs text-[#AA5E7A] font-semibold mb-4">
+            Scan For Directions
+        </p>
+
+        <div class="bg-white p-4 rounded-2xl shadow-md">
+            <img
+                src="./PHOTOS/google_maps_qr.png"
+                alt="Location QR Code"
+                style="width:100px; height:auto;"
+            >
+        </div>
+
+        <p class="text-xs text-gray-500 mt-3">
+            Find your way to our celebration
+        </p>
+
+    </div>
+
+    <!-- Wedding Music -->
+<!-- Wedding Music & Directions -->
+<div class="mt-12">
+
+    <p class="script-font text-4xl text-[#AA5E7A] mb-5">
+        A Little Something For You
+    </p>
+
+    <div class="flex flex-wrap justify-center items-center gap-4">
+
+        <!-- Music Button -->
+        <audio id="weddingSong" src="./music/Mon_tui_ektu_kotha_shon_final.mp3"></audio>
+        <button
+            id="musicButton"
+            class="music-button"
+            onclick="toggleMusic()">
+            ♫ Play Our Wedding Song
+        </button>
+
+        <!-- Directions Button -->
+        <a
+             href="https://www.google.com/maps/place/Shagun+Banquet+Hall/@22.6606046,88.3147453,14.62z/data=!4m10!1m2!2m1!1sShagun+Banquet+Hall!3m6!1s0x39f89ce720c38c43:0xc97b58a906842b52!8m2!3d22.6660456!4d88.3452173!15sChNTaGFndW4gQmFucXVldCBIYWxsWhUiE3NoYWd1biBiYW5xdWV0IGhhbGySAQxiYW5xdWV0X2hhbGyaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUkNkbUZFTUhOblJSQULgAQD6AQQIABA6!16s%2Fg%2F11c1w_9zbd?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="music-button inline-block no-underline">
+            ↗ Get Directions
+        </a>
+
+    </div>
+
+    <p class="text-xs text-gray-400 mt-4">
+        Made with love ❤️
+    </p>
+
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="text-center pb-8 relative z-10">
+    <p class="script-font text-4xl text-[#AA5E7A]">
+        D & S
+    </p>
+    <p class="text-xs tracking-widest text-[#AA5E7A] mt-2">
+        TWO HEARTS · ONE JOURNEY
+    </p>
+</footer>
+
+<script>
+
+// Floating Hearts Animation
+const heartsContainer = document.getElementById("hearts");
+
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = "♥";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 12000);
+}
+
+setInterval(createHeart, 900);
+
+
+// Wedding Music Player
+const song = document.getElementById("weddingSong");
+const button = document.getElementById("musicButton");
+
+function toggleMusic() {
+
+    if (song.paused) {
+
+        song.play()
+        .then(() => {
+            button.innerHTML = "Ⅱ Pause Wedding Song";
+        })
+        .catch(() => {
+            alert("Unable to play the song. Please check your audio file.");
+        });
+
+    } else {
+
+        song.pause();
+        button.innerHTML = "♫ Play Our Wedding Song";
+
+    }
+}
+
+song.addEventListener("ended", () => {
+    button.innerHTML = "♫ Play Our Wedding Song";
+});
+song.autoplay = true;
+song.muted = false;
+</script>
+
+</body>
+</html>
