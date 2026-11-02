@@ -167,7 +167,7 @@
 
     <!-- Couple Names -->
     <p class="script-font text-3xl md:text-4xl text-[#A16B36]">
-        Mr <span class="text-[#AA5E7A] text-5xl font-bold">♡</span> Ms
+        Mr <span class="text-[#AA5E7A] text-5xl font-bold">❤️</span> Ms
     </p>
 
     <h1 class="script-font couple-names text-7xl md:text-8xl lg:text-9xl text-[#702D35] mt-5">
@@ -244,7 +244,7 @@
     <div class="flex flex-wrap justify-center items-center gap-4">
 
         <!-- Music Button -->
-        <audio id="weddingSong" src="./music/Mon_tui_ektu_kotha_shon_final.mp3"></audio>
+        <audio id="weddingSong" src="./music/invitation_back_music.mp3"></audio>
         <button
             id="musicButton"
             class="music-button"
@@ -303,10 +303,12 @@ function createHeart() {
 setInterval(createHeart, 900);
 
 
+
 // Wedding Music Player
 const song = document.getElementById("weddingSong");
 const button = document.getElementById("musicButton");
 
+// Play and Pause Function
 function toggleMusic() {
 
     if (song.paused) {
@@ -327,11 +329,26 @@ function toggleMusic() {
     }
 }
 
+// Automatically update button when song finishes
 song.addEventListener("ended", () => {
     button.innerHTML = "♫ Play Our Wedding Song";
 });
-song.autoplay = true;
-song.muted = false;
+
+// Attempt autoplay when invitation opens
+window.addEventListener("load", () => {
+
+    song.muted = false;
+
+    song.play()
+    .then(() => {
+        button.innerHTML = "Ⅱ Pause Wedding Song";
+    })
+    .catch(() => {
+        button.innerHTML = "♫ Tap to Play Wedding Song";
+    });
+
+});
+
 </script>
 
 </body>
