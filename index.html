@@ -112,6 +112,55 @@
     box-shadow: 0 12px 30px rgba(80, 40, 40, 0.13);
 }
 
+/* frame here */
+.botanical-frame {
+    position: relative;
+    display: inline-block;
+    padding: 22px;
+    margin: 20px auto;
+    isolation: isolate;
+}
+
+.botanical-frame .portrait {
+    display: block;
+    width: 320px;
+    max-width: 75vw;
+    height: auto;
+    border: 2px solid #D9A3A8;
+    border-radius: 8px;
+    padding: 5px;
+    background: #FFF8F5;
+    box-shadow: 0 5px 18px rgba(112, 45, 53, 0.13);
+}
+
+/* Decorative floral corners */
+.botanical-frame::before,
+.botanical-frame::after {
+    position: absolute;
+    z-index: 2;
+    color: #B77C86;
+    font-size: 43px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.botanical-frame::before {
+    content: "❀ ❧";
+    top: 0;
+    left: 0;
+}
+
+.botanical-frame::after {
+    content: "❧ ❀";
+    bottom: 0;
+    right: 0;
+}
+
+/* Soft botanical side details */
+.botanical-frame {
+    outline: 1px solid rgba(183, 124, 134, 0.45);
+    outline-offset: 9px;
+}
     .section-line {
         height: 1px;
         width: 100px;
@@ -128,6 +177,34 @@
             font-size: 75px !important;
         }
     }
+    /* venue box design here */
+.venue-box {
+    display: block;
+    width: fit-content;
+    max-width: 90%;
+    min-width: 260px;
+    box-sizing: border-box;
+
+    padding: 18px 24px;
+    margin: 20px auto;
+
+    border: 1.5px solid #C98F98;
+    border-radius: 12px;
+    background: rgba(255, 248, 245, 0.85);
+    box-shadow: 0 4px 14px rgba(112, 45, 53, 0.10);
+    text-align: center;
+}
+
+.venue-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 5vw, 27px);
+    font-weight: 600;
+    line-height: 1.3;
+    white-space: normal;
+    overflow-wrap: break-word;
+    color: #702D35;
+    margin: 0;
+}
 
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;600&display=swap');
 
@@ -205,14 +282,13 @@
     </p>
 
     <!-- Couple Portrait -->
-    <div class="flex justify-center mb-10">
-        <img
-            src="./PHOTOS/photo_watercolor.png"
-            alt="Didhiti and Shuvankar"
-            class="portrait"
-            height=100px
-        >
-    </div>
+    <div class="botanical-frame">
+    <img
+        src="./PHOTOS/Watercolor Romance in Bloom.png"
+        class="portrait"
+        alt="Wedding Couple"
+    >
+</div>
 
     <!-- Main Heading -->
     <p class="serif-font text-xl md:text-2xl tracking-[0.25em] uppercase">
@@ -262,13 +338,10 @@
 
         <div class="section-line"></div>
 
-        <p class="serif-font text-4xl font-bold md:text-4xl">
-            Shagun Banquet Hall
-        </p>
-
-        <!-- <p class="text-sm text-gray-500 mt-3">
-            Time to be announced
-        </p> -->
+        <div class="venue-box">
+    <span class="venue-label">Wedding Venue</span>
+    <h3>Shagun Banquet Hall</h3>
+    </div>
 
     </div>
 
