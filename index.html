@@ -147,7 +147,7 @@
     <!-- Couple Portrait -->
     <div class="flex justify-center mb-10">
         <img
-            src="./PHOTOS/Watercolor Romance in Bloom.png"
+            src="./PHOTOS/photo_watercolor.png"
             alt="Didhiti and Shuvankar"
             class="portrait"
             height=100px
@@ -244,7 +244,7 @@
     <div class="flex flex-wrap justify-center items-center gap-4">
 
         <!-- Music Button -->
-        <audio id="weddingSong" src="./music/invitation_back_music.mp3"></audio>
+        <audio id="weddingSong" src="./music/invitation_back_music.mp3" preload="auto" ></audio>
         <button
             id="musicButton"
             class="music-button"
@@ -341,22 +341,6 @@ window.addEventListener("load", () => {
 song.addEventListener("ended", () => {
     button.innerHTML = "♫ Play Our Wedding Song";
 });
-
-// Mobile autoplay fallback
-document.addEventListener("click", startMusic, { once: true });
-document.addEventListener("touchstart", startMusic, { once: true });
-
-function startMusic() {
-    if (song.paused) {
-        song.play()
-            .then(() => {
-                button.innerHTML = "Ⅱ Pause Wedding Song";
-            })
-            .catch(error => {
-                console.log("Playback failed:", error);
-            });
-    }
-}
 
 
 </script>
