@@ -302,52 +302,62 @@ function createHeart() {
 
 setInterval(createHeart, 900);
 
-
-
 // Wedding Music Player
 const song = document.getElementById("weddingSong");
 const button = document.getElementById("musicButton");
 
-// Play and Pause Function
+// Play/Pause button
 function toggleMusic() {
-
     if (song.paused) {
-
         song.play()
-        .then(() => {
-            button.innerHTML = "Ⅱ Pause Wedding Song";
-        })
-        .catch(() => {
-            alert("Unable to play the song. Please check your audio file.");
-        });
-
+            .then(() => {
+                button.innerHTML = "Ⅱ Pause Wedding Song";
+            })
+            .catch(error => {
+                console.log("Music playback failed:", error);
+            });
     } else {
-
         song.pause();
         button.innerHTML = "♫ Play Our Wedding Song";
-
     }
 }
 
-// Automatically update button when song finishes
+// Automatically play when invitation opens
+window.addEventListener("load", () => {
+    song.muted = false;
+    song.volume = 1;
+
+    song.play()
+        .then(() => {
+            button.innerHTML = "Ⅱ Pause Wedding Song";
+        })
+        .catch(error => {
+            button.innerHTML = "♫ Play Our Wedding Song";
+            console.log("Browser blocked autoplay:", error);
+        });
+});
+
+// Reset button when song ends
 song.addEventListener("ended", () => {
     button.innerHTML = "♫ Play Our Wedding Song";
 });
 
-// Attempt autoplay when invitation opens
-window.addEventListener("load", () => {
+// Mobile autoplay fallback
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
 
-    song.muted = false;
+function startMusic() {
+    if (song.paused) {
+        song.play()
+            .then(() => {
+                button.innerHTML = "Ⅱ Pause Wedding Song";
+            })
+            .catch(error => {
+                console.log("Playback failed:", error);
+            });
+    }
+}
 
-    song.play()
-    .then(() => {
-        button.innerHTML = "Ⅱ Pause Wedding Song";
-    })
-    .catch(() => {
-        button.innerHTML = "♫ Tap to Play Wedding Song";
-    });
-
-});
 
 </script>
 
