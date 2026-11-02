@@ -62,9 +62,10 @@
     .heart {
         position: fixed;
         bottom: -30px;
-        color: #e7adb5;
+        color: #f0ecec;
         opacity: 0.45;
         pointer-events: none;
+        font-size: 85px;
         animation: floatHeart 9s linear infinite;
         z-index: 1;
     }
@@ -127,6 +128,65 @@
             font-size: 75px !important;
         }
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@400;600&display=swap');
+
+.wedding-countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px auto;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+.wedding-time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 85px;
+    background-color: rgba(212, 154, 154, 0.08); 
+    border: 1px solid rgba(170, 94, 122, 0.3); 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(170, 94, 122, 0.06);
+}
+
+.wedding-time-block span {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #AA5E7A; 
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.wedding-time-block label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #D49A9A; 
+    font-weight: 600;
+}
+
+@media (max-width: 400px) {
+    .wedding-countdown {
+        gap: 10px;
+    }
+    .wedding-time-block {
+        width: 65px;
+        height: 75px;
+    }
+    .wedding-time-block span {
+        font-size: 1.8rem;
+    }
+    .wedding-time-block label {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+}
 </style>
 </head>
 
@@ -263,6 +323,25 @@
 
     </div>
 
+<div class="wedding-countdown" id="wedding-countdown">
+    <div class="wedding-time-block">
+        <span id="wedding-days">00</span>
+        <label>Days</label>
+    </div>
+    <div class="wedding-time-block">
+        <span id="wedding-hours">00</span>
+        <label>Hours</label>
+    </div>
+    <div class="wedding-time-block">
+        <span id="wedding-minutes">00</span>
+        <label>Mins</label>
+    </div>
+    <div class="wedding-time-block">
+        <span id="wedding-seconds">00</span>
+        <label>Secs</label>
+    </div>
+</div>
+
     <p class="text-xs text-gray-400 mt-4">
         Made with love ❤️
     </p>
@@ -342,6 +421,27 @@ song.addEventListener("ended", () => {
     button.innerHTML = "♫ Play Our Wedding Song";
 });
 
+const countdownDate = new Date("Feb 11, 2027 18:00:00").getTime();
+
+    const updateCountdown = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("wedding-days").innerText = days.toString().padStart(2, '0');
+        document.getElementById("wedding-hours").innerText = hours.toString().padStart(2, '0');
+        document.getElementById("wedding-minutes").innerText = minutes.toString().padStart(2, '0');
+        document.getElementById("wedding-seconds").innerText = seconds.toString().padStart(2, '0');
+
+        if (distance < 0) {
+            clearInterval(updateCountdown);
+            document.getElementById("wedding-countdown").innerHTML = "<div style='font-family: Playfair Display, serif; font-size: 1.5rem; color: #AA5E7A; text-align: center;'>The Celebration Has Begun!</div>";
+        }
+    }, 1000);
 
 </script>
 
