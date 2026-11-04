@@ -103,6 +103,18 @@
         transform: translateY(-3px);
     }
 
+    .music-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.music-button {
+    display: inline-block;
+}
+
     .portrait {
     max-width: 60%;
     width: 320px;
@@ -282,12 +294,24 @@
     </p>
 
     <!-- Couple Portrait -->
+    <div class="photo-music-group">
+
     <div class="botanical-frame">
-    <img
-        src="./PHOTOS/photo_watercolor.png"
-        class="portrait"
-        alt="Wedding Couple"
-    >
+        <img
+            src="./PHOTOS/photo_watercolor.png"
+            class="portrait"
+            alt="Wedding Couple"
+        >
+    </div>
+
+    <div class="music-container">
+        <button id="musicButton"
+                class="music-button"
+                onclick="toggleMusic()">
+            ♫ Play Our Wedding Song
+        </button>
+    </div>
+
 </div>
 
     <!-- Main Heading -->
@@ -375,15 +399,6 @@
     </p>
 
     <div class="flex flex-wrap justify-center items-center gap-4">
-
-        <!-- Music Button -->
-        <audio id="weddingSong" src="./music/bg_intro.mp3" preload="auto" ></audio>
-        <button
-            id="musicButton"
-            class="music-button"
-            onclick="toggleMusic()">
-            ♫ Play Our Wedding Song
-        </button>
 
         <!-- Directions Button -->
         <a
